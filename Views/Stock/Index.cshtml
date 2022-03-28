@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class='form'>
+        <div class='row'>
+            <div class="col-6">
+                
+            </div>
+        </div>
+    </div>
+    <form class="mt-5" action="/action_page.php">
+        <div class='row'>
+            <div class="col-6">
+                <label for="mack">Mã chứng khoán:</label>
+                <input  class="form-control"  id="mack">       
+            </div>
+             <div class="col-6">
+                <label for="khoiluong">Khối lượng:</label>
+                <input  class="form-control"  id="khoiluong">
+            </div>
+             <div class="col-6">
+                <label for="gia">Giá:</label>
+                <input  class="form-control"  id="gia">
+            </div>
+             <div class="col-6">
+                <label for="">Mua/bán:</label>
+                <select class="custom-select" value='mua'>
+                  <option value="mua">Mua</option>
+                  <option value="ban">Bán</option>
+                </select>
+            </div>
+             <div class="col-12 d-flex justify-content-around mt-5">
+                <button type="submit" class="btn btn-primary">Xác nhận</button>
+                <div  class="btn btn-warning">Làm lại</div>
+             </div>
+        </div>
+</form>
+
+
