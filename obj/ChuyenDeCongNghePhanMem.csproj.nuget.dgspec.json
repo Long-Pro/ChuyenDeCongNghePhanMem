@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Long\\Desktop\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj": {}
+    "C:\\Users\\Long\\Desktop\\subjectProject\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Long\\Desktop\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj": {
+    "C:\\Users\\Long\\Desktop\\subjectProject\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Long\\Desktop\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj",
+        "projectUniqueName": "C:\\Users\\Long\\Desktop\\subjectProject\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj",
         "projectName": "ChuyenDeCongNghePhanMem",
-        "projectPath": "C:\\Users\\Long\\Desktop\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj",
+        "projectPath": "C:\\Users\\Long\\Desktop\\subjectProject\\ChuyenDeCongNghePhanMem\\ChuyenDeCongNghePhanMem.csproj",
         "packagesPath": "C:\\Users\\Long\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Long\\Desktop\\ChuyenDeCongNghePhanMem\\obj\\",
+        "outputPath": "C:\\Users\\Long\\Desktop\\subjectProject\\ChuyenDeCongNghePhanMem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Long\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -41,6 +41,16 @@
           "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0-preview.2.22153.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0-preview.2.22153.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.0-preview.2.22153.1, )"
             },

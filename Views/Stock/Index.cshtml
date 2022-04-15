@@ -1,40 +1,48 @@
-﻿
+﻿@using ChuyenDeCongNghePhanMem.Models
+
+@model Stock
 @{
     ViewData["Title"] = "Index";
 }
-    <div class='form'>
-        <div class='row'>
-            <div class="col-6">
-                
-            </div>
+<form class="mt-5"  method="post" asp-controller="Stock" asp-action="Create">
+    <div class='row'>
+        <div class="col-6 mt-4">
+            <label asp-for="mack">Mã chứng khoán:</label>
+            <input asp-for="mack" class="form-control input-text"  id="mack" name="mack">     
+            <span asp-validation-for="mack" class="text-danger"></span>
         </div>
+        <div class="col-6 mt-4">
+            <label asp-for="sl">Số lượng:</label>
+            <input asp-for="sl"  class="form-control input-text"  id="sl" name="sl">
+            <span asp-validation-for="sl" class="text-danger"></span>
+        </div>
+        <div class="col-6 mt-4">
+            <label asp-for="gia">Giá:</label>
+            <input asp-for="gia" type="number" step=0.001  class="form-control input-text"  id="gia" name="gia">
+            <span asp-validation-for="gia" class="text-danger"></span>
+        </div>
+        <div class="col-6 mt-4">
+            <label for="">Mua/bán:</label>
+            <select class="custom-select" value='M' name="loai" asp-for="loai">
+                <option value="M">Mua</option>
+                <option value="B">Bán</option>
+            </select>
+        </div>
+        <div class="col-12 d-flex justify-content-around mt-5">
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+            <div id="resetBtn" onclick="reset()" class="btn btn-warning">Làm lại</div>
+        </div>
+        <div asp-validation-summary="All"></div>
     </div>
-    <form class="mt-5" action="/action_page.php">
-        <div class='row'>
-            <div class="col-6">
-                <label for="mack">Mã chứng khoán:</label>
-                <input  class="form-control"  id="mack">       
-            </div>
-             <div class="col-6">
-                <label for="khoiluong">Khối lượng:</label>
-                <input  class="form-control"  id="khoiluong">
-            </div>
-             <div class="col-6">
-                <label for="gia">Giá:</label>
-                <input  class="form-control"  id="gia">
-            </div>
-             <div class="col-6">
-                <label for="">Mua/bán:</label>
-                <select class="custom-select" value='mua'>
-                  <option value="mua">Mua</option>
-                  <option value="ban">Bán</option>
-                </select>
-            </div>
-             <div class="col-12 d-flex justify-content-around mt-5">
-                <button type="submit" class="btn btn-primary">Xác nhận</button>
-                <div  class="btn btn-warning">Làm lại</div>
-             </div>
-        </div>
 </form>
+<script>
+    
+    let resetBtn=document.querySelector('#resetBtn')
+    function reset(){
+        console.log("test")
+        let inputs=document.querySelectorAll('.input-text')
+        inputs.forEach(item=>item.value="")
+    }
+</script>
 
 
