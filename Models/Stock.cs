@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ChuyenDeCongNghePhanMem.CustomDataAnnorationAttributes;
+using System.ComponentModel.DataAnnotations;
 
 namespace ChuyenDeCongNghePhanMem.Models
 {
     public class Stock
     {
         [Required(ErrorMessage = "Mã cổ phiếu không được trống")]
+        //[MaxWordAttribute(5, ErrorMessage = "There are too many words in {0}.")]
         public String mack { get; set; }
 
         [Required]

@@ -26,50 +26,32 @@ namespace ChuyenDeCongNghePhanMem.Controllers
         {
             //stock.format();
             Console.WriteLine("-------");
-            Console.WriteLine(ModelState.IsValid);
-
+            
             stock.show();
             if (ModelState.IsValid)
             {
                 Console.WriteLine("valid");
                 TempData["success"] = "Đặt lệnh thành công";
-                /*stock = new Stock();
-                return RedirectToAction("Index", stock);*/
-                return View("~/Views/Stock/index.cshtml", stock);
+
+                Console.WriteLine("------------------------------");
+                /*String sql = String.Format("ThemLenhDat '{0}','{1}',{2},{3}", stock.mack, stock.loai, stock.sl, stock.gia);
+                Console.WriteLine(sql);
+                Console.WriteLine(x);
+                Console.WriteLine("-------------");*/
+                String date = DateTime.Now.ToString("dd/MM/yyyy");
+                String sql = String.Format("SP_KHOPLENH_LO '{0}','{1}','{2}',{3},{4}", stock.mack, date, stock.loai, stock.sl, stock.gia);
+                Console.WriteLine(sql);
+                int x = _db.Database.ExecuteSqlRaw(sql);
+                Console.WriteLine(x);
+                return RedirectToAction("Index");
+                //return View("~/Views/Stock/index.cshtml", stock);
                 
             }
-
-            /* if (stock.mack=="")
-             {
-                 ModelState.AddModelError("mack", "Mã cổ phiếu không được rỗng");
-             }*/
             TempData["error"] = "Đặt lệnh thất bại";
+            //return RedirectToAction("Index", stock);
             return View("~/Views/Stock/index.cshtml",stock);
 
             //String mack,int sl,int gia,String loai
-
-            /*Console.WriteLine("------------");
-            Console.WriteLine(mack,sl,gia);
-            Console.WriteLine(sl);
-            Console.WriteLine( gia);
-            Console.WriteLine(loai);
-            Console.WriteLine("------------");
-
-            String sql = String.Format("ThemLenhDat '{0}','{1}',{2},{3}", mack, loai, sl, gia);
-            Console.WriteLine(sql);
-            Console.WriteLine("------------");
-            int x =_db.Database.ExecuteSqlRaw(sql);
-            Console.WriteLine(x);
-            Console.WriteLine("--------------------------------");
-            String date = DateTime.Now.ToString("MM/dd/yyyy");
-            sql = String.Format("SP_KHOPLENH_LO '{0}','{1}',{2},{3},{4}", mack, date, loai, sl, gia);
-            Console.WriteLine(sql);
-            /*int y = _db.Database.ExecuteSqlRaw(sql);
-            Console.WriteLine(y);
-            Console.WriteLine("------------");*/
-
-
-            return RedirectToAction("Index");
 
         }
     }

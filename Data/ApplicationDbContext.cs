@@ -10,5 +10,7 @@ namespace ChuyenDeCongNghePhanMem.Data
 
         }
         public DbSet<Test> Tests { get; set; }
+        public DbSet<IdStock> IdStocks { get; set; }
+
     }
 }
