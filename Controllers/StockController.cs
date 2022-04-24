@@ -38,8 +38,8 @@ namespace ChuyenDeCongNghePhanMem.Controllers
                 Console.WriteLine(sql);
                 Console.WriteLine(x);
                 Console.WriteLine("-------------");*/
-                String date = DateTime.Now.ToString("dd/MM/yyyy");
-                String sql = String.Format("SP_KHOPLENH_LO '{0}','{1}','{2}',{3},{4}", stock.mack, date, stock.loai, stock.sl, stock.gia);
+                //String date = DateTime.Now.ToString("dd/MM/yyyy");
+                String sql = String.Format("SP_KHOPLENH_LO '{0}','{1}',{2},{3}", stock.mack, stock.loai, stock.sl, stock.gia);
                 Console.WriteLine(sql);
                 int x = _db.Database.ExecuteSqlRaw(sql);
                 Console.WriteLine(x);
